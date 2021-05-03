@@ -1,4 +1,4 @@
-package CompMath4;
+package CompMath4.Computations;
 
 public class Functions {
 

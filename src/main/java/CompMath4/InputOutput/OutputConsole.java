@@ -1,9 +1,12 @@
-package CompMath4;
+package CompMath4.InputOutput;
+
+import CompMath4.Computations.Functions;
+import CompMath4.DrawChart;
 
 public class OutputConsole {
     Functions functions = new Functions();
 
-    public void print_table_all(double[][] points, double a, double b, double c, int functionNumber) {
+    public void printTableAll(double[][] points, double a, double b, double c, int functionNumber) {
         double sym_for_x = 0;
         double sym_for_y = 0;
 
@@ -74,6 +77,7 @@ public class OutputConsole {
             double r = sum_up_r / Math.sqrt(sum_down_r_x * sum_down_r_y);
             System.out.println("Коэффициент корреляции = " + r);
             r = Math.abs(r);
+
             if (r == 0)
                 System.out.println("Связь между переменными отсутствует");
             else if (r > 0 && r < 0.3)
@@ -85,7 +89,7 @@ public class OutputConsole {
             else if (r >= 0.7 && r < 0.9)
                 System.out.println("Связь высокая");
             else if (r >= 0.9)
-                System.out.println("Связь очень высокая");
+                System.out.println("Связь весьма высокая");
         }
 
         System.out.println("Среднеквадратичное отклонение = " + functions.squareDeviation(points, a, b, c, functionNumber));
@@ -93,7 +97,7 @@ public class OutputConsole {
         System.out.println("-------------------------------------------------------------------------\n");
     }
 
-    public void print_table_short(double[][] points, double a, double b, double c, int functionNumber) {
+    public void printTableShort(double[][] points, double a, double b, double c, int functionNumber) {
         if (functionNumber == 1) {
             System.out.printf("|%-18s|%-15s|%-15s|%-15s|%-17s|%-32s|%-32s|\n",
                     "Вид функции", "a", "b", "c", "Мера отклонения S", "Среднеквадратичное отклонение q",

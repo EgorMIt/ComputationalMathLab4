@@ -1,6 +1,8 @@
-package CompMath4;
+package CompMath4.Computations;
 
-public class Computations {
+import CompMath4.InputOutput.OutputConsole;
+
+public class Methods {
     public static void startCount(double[][] points, double[][] dataSetChart, boolean outputType) {
         OutputConsole outputConsole = new OutputConsole();
         GaussMethod gaussMethod = new GaussMethod();
@@ -20,7 +22,7 @@ public class Computations {
         double[] paramsSqrF = gaussMethod.startMethod(matrix, nMatrix);
 
         if (outputType) {
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Первая функция
             System.out.println("Sum X = " + sum_x_1 + " Sum XX = " +
                     sum_x_2 + " Sum Y = " + sum_y_1 + " Sum XY = " + sum_x_y);
 
@@ -29,8 +31,9 @@ public class Computations {
             dataSetChart[0][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 1);
 
-            outputConsole.print_table_all(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableAll(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
+
+            //Вторая функция
             System.out.println("Sum ln(x) = " + sum_x_ln + " Sum ln(y) = " + sum_y_ln +
                     " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*ln(y) = " + sum_x_y_ln);
 
@@ -38,8 +41,9 @@ public class Computations {
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
             dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
-            outputConsole.print_table_all(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableAll(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+
+            //Третья функция
             System.out.println("Sum x = " + sum_x_1 + " Sum ln(y) = " + sum_y_ln +
                     " Sum x^2 = " + sum_x_2 + " Sum ln(y)*x = " + sum_y_ln_x);
             dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
@@ -47,8 +51,9 @@ public class Computations {
             dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
 
-            outputConsole.print_table_all(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableAll(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
+
+            //Четвертая функция
             System.out.println("Sum ln(x) = " + sum_x_ln + " Sum y = " + sum_y_1 +
                     " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*y = " + sum_x_ln_y);
             dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
@@ -56,51 +61,54 @@ public class Computations {
             dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
 
-            outputConsole.print_table_all(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableAll(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
+
+            //Пятая функция
             System.out.println("Sum x = " + sum_x_1 + " Sum y = " + sum_y_1 +
                     " Sum x*y = " + sum_x_y + " Sum y*x^2= " + sum_x_2_y +
                     " Sum x^2 = " + sum_x_2 + " Sum x^3 = " + sum_x_3 + " Sum x^4 = " + sum_x_4);
             dataSetChart[4][0] = paramsSqrF[2];
             dataSetChart[4][1] = paramsSqrF[1];
             dataSetChart[4][2] = paramsSqrF[0];
-            outputConsole.print_table_all(points, paramsSqrF[2], paramsSqrF[1], paramsSqrF[0], 5);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableAll(points, paramsSqrF[2], paramsSqrF[1], paramsSqrF[0], 5);
+
         } else {
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             dataSetChart[0][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 1);
             dataSetChart[0][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 1);
 
-            outputConsole.print_table_short(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableShort(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
+
+
             dataSetChart[1][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
             dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
 
-            outputConsole.print_table_short(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableShort(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+
+
             dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
             dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
 
-            outputConsole.print_table_short(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableShort(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
+
+
             dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
             dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
                     sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
 
-            outputConsole.print_table_short(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableShort(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
+
+
             dataSetChart[4][0] = paramsSqrF[2];
             dataSetChart[4][1] = paramsSqrF[1];
             dataSetChart[4][2] = paramsSqrF[0];
-            outputConsole.print_table_short(points, paramsSqrF[2], paramsSqrF[1], paramsSqrF[0], 5);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            outputConsole.printTableShort(points, paramsSqrF[2], paramsSqrF[1], paramsSqrF[0], 5);
         }
         functions.selectedFunction(points, dataSetChart);
         outputConsole.drawCharts(points, dataSetChart);

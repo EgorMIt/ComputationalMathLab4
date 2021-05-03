@@ -1,4 +1,4 @@
-package CompMath4;
+package CompMath4.Computations;
 
 public class GaussMethod {
     public double[] startMethod(double[][] a, int n) {

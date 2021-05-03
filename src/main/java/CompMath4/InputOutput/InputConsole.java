@@ -1,4 +1,4 @@
-package CompMath4;
+package CompMath4.InputOutput;
 
 import java.util.Scanner;
 

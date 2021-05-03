@@ -1,10 +1,13 @@
 package CompMath4;
 
+import CompMath4.Computations.Methods;
+import CompMath4.InputOutput.InputConsole;
+import CompMath4.InputOutput.InputFile;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Main {
-
     public static void main(String[] arg) {
         InputConsole inConsole = new InputConsole();
         InputFile inFile = new InputFile();
@@ -19,16 +22,17 @@ public class Main {
             try {
                 FileReader fileReader = new FileReader("src/main/resources/input");
                 points = inFile.getDataSet(fileReader);
-                outputType = inFile.outputType();
+                outputType = inFile.getOutputType();
 
-                Computations.startCount(points, dataSetChart, outputType);
+                Methods.startCount(points, dataSetChart, outputType);
+
             } catch (FileNotFoundException e) {
                 System.out.println("Файл не найден!");
             }
         } else {
             boolean outputType = inConsole.outputType();
             points = inConsole.inputPoints();
-            Computations.startCount(points, dataSetChart, outputType);
+            Methods.startCount(points, dataSetChart, outputType);
         }
     }
 }

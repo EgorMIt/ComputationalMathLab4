@@ -1,4 +1,4 @@
-package CompMath4;
+package CompMath4.InputOutput;
 
 import java.io.FileReader;
 import java.util.Scanner;
@@ -58,7 +58,7 @@ public class InputFile {
         return points;
     }
 
-    public boolean outputType() {
+    public boolean getOutputType() {
         return outputType;
     }
 }

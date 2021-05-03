@@ -1,5 +1,6 @@
 package CompMath4;
 
+import CompMath4.Computations.Functions;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -50,7 +51,7 @@ public class DrawChart {
         // Помещаем график на фрейм
         frame.getContentPane()
                 .add(new ChartPanel(chart));
-        frame.setSize(400, 300);
+        frame.setSize(1000, 1000);
         frame.setVisible(true);
     }
 }
