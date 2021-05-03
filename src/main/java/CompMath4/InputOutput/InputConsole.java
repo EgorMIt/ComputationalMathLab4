@@ -57,7 +57,7 @@ public class InputConsole {
     }
 
     public void startProgram() {
-        System.out.println("Программа начала свою работу");
+        System.out.println(">>> Программа начала свою работу <<<");
         System.out.println("""
                 Формат входного файла:
                 1. Количество точек: N >= 12
