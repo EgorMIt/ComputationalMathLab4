@@ -9,9 +9,25 @@ public class InputConsole {
         int n = inputN();
         double[][] points = new double[2][n];
 
+        double tmp, e = 0.01;
         for (int i = 0; i < n; i++) {
-            points[0][i] = inPointX(i);
-            points[1][i] = inPointY(i);
+            tmp = inPointX(i);
+            for (int j = 0; j < i; j++)
+                if (points[0][j] == tmp) {
+                    tmp += e;
+                    e += 0.01;
+                    break;
+                }
+            points[0][i] = tmp;
+
+            tmp = inPointY(i);
+            for (int j = 0; j < i; j++)
+                if (points[1][j] == tmp) {
+                    tmp += e;
+                    e += 0.01;
+                    break;
+                }
+            points[1][i] = tmp;
         }
         return points;
     }

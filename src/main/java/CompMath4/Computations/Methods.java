@@ -34,34 +34,40 @@ public class Methods {
             outputConsole.printTableAll(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
 
             //Вторая функция
-            System.out.println("Sum ln(x) = " + sum_x_ln + " Sum ln(y) = " + sum_y_ln +
-                    " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*ln(y) = " + sum_x_y_ln);
+            if (functions.checkMinus(points)) {
+                System.out.println("Sum ln(x) = " + sum_x_ln + " Sum ln(y) = " + sum_y_ln +
+                        " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*ln(y) = " + sum_x_y_ln);
 
-            dataSetChart[1][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
-            dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
-            outputConsole.printTableAll(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+                dataSetChart[1][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
+                dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
+                outputConsole.printTableAll(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+            }
 
             //Третья функция
-            System.out.println("Sum x = " + sum_x_1 + " Sum ln(y) = " + sum_y_ln +
-                    " Sum x^2 = " + sum_x_2 + " Sum ln(y)*x = " + sum_y_ln_x);
-            dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
-            dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
+            if (functions.checkMinus(points)) {
+                System.out.println("Sum x = " + sum_x_1 + " Sum ln(y) = " + sum_y_ln +
+                        " Sum x^2 = " + sum_x_2 + " Sum ln(y)*x = " + sum_y_ln_x);
+                dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
+                dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
 
-            outputConsole.printTableAll(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
+                outputConsole.printTableAll(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
+            }
 
-            //Четвертая функция
-            System.out.println("Sum ln(x) = " + sum_x_ln + " Sum y = " + sum_y_1 +
-                    " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*y = " + sum_x_ln_y);
-            dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
-            dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
+            //Четвертая
+            if (functions.checkMinus(points)) {
+                System.out.println("Sum ln(x) = " + sum_x_ln + " Sum y = " + sum_y_1 +
+                        " Sum (ln(x))^2 = " + sum_x_2_ln + " Sum ln(x)*y = " + sum_x_ln_y);
+                dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
+                dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
 
-            outputConsole.printTableAll(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
+                outputConsole.printTableAll(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
+            }
 
             //Пятая функция
             System.out.println("Sum x = " + sum_x_1 + " Sum y = " + sum_y_1 +
@@ -80,30 +86,32 @@ public class Methods {
 
             outputConsole.printTableShort(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
 
+            if (functions.checkMinus(points)) {
+                dataSetChart[1][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
+                dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
 
-            dataSetChart[1][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
-            dataSetChart[1][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 2);
+                outputConsole.printTableShort(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+            }
 
-            outputConsole.printTableShort(points, dataSetChart[1][0], dataSetChart[1][1], 0, 2);
+            if (functions.checkMinus(points)) {
+                dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
+                dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
 
+                outputConsole.printTableShort(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
+            }
 
-            dataSetChart[2][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
-            dataSetChart[2][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 3);
+            if (functions.checkMinus(points)) {
+                dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
+                dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
+                        sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
 
-            outputConsole.printTableShort(points, dataSetChart[2][0], dataSetChart[2][1], 0, 3);
-
-
-            dataSetChart[3][0] = functions.getA(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
-            dataSetChart[3][1] = functions.getB(sum_x_1, sum_x_2, sum_y_1, sum_x_y, sum_x_ln, sum_y_ln, sum_x_2_ln,
-                    sum_x_y_ln, sum_y_ln_x, sum_x_ln_y, points[0].length, 4);
-
-            outputConsole.printTableShort(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
-
+                outputConsole.printTableShort(points, dataSetChart[3][0], dataSetChart[3][1], 0, 4);
+            }
 
             dataSetChart[4][0] = paramsSqrF[2];
             dataSetChart[4][1] = paramsSqrF[1];

@@ -89,6 +89,14 @@ public class Functions {
         return 1 - ((deviation_measure_sqr) / (Fi_sqr - Math.pow(Fi, 2) / points[0].length));
     }
 
+    public boolean checkMinus(double[][] points) {
+        for (int i = 0; i < points[0].length; i++) {
+            if (points[0][i] < 0 || points[1][i] < 0)
+                return false;
+        }
+        return true;
+    }
+
     public void selectedFunction(double[][] points, double[][] dataSetChart) {
         double min_q = squareDeviation(points, dataSetChart[0][0], dataSetChart[0][1], 0, 1);
         int num_selected_f = 1;

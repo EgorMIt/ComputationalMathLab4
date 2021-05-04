@@ -25,7 +25,6 @@ public class Main {
                 outputType = inFile.getOutputType();
 
                 Methods.startCount(points, dataSetChart, outputType);
-
             } catch (FileNotFoundException e) {
                 System.out.println("Файл не найден!");
             }

@@ -11,9 +11,8 @@ import org.jfree.data.xy.XYSeriesCollection;
 import javax.swing.*;
 
 public class DrawChart {
-
     public void draw(double[][] points, double[][] dataSetChart) {
-        Functions f = new Functions();
+        Functions functions = new Functions();
 
         XYSeries series = new XYSeries("Points");
         XYSeries series1 = new XYSeries("Fi_1");
@@ -29,18 +28,22 @@ public class DrawChart {
         }
 
         for (double i = points[0][0]; i <= points[0][points[0].length - 1]; i += 0.1) {
-            series1.add(i, f.f(i, dataSetChart[0][0], dataSetChart[0][1], 0, 1));
-            series2.add(i, f.f(i, dataSetChart[1][0], dataSetChart[1][1], 0, 2));
-            series3.add(i, f.f(i, dataSetChart[2][0], dataSetChart[2][1], 0, 3));
-            series4.add(i, f.f(i, dataSetChart[3][0], dataSetChart[3][1], 0, 4));
-            series5.add(i, f.f(i, dataSetChart[4][0], dataSetChart[4][1], dataSetChart[4][2], 5));
+            series1.add(i, functions.f(i, dataSetChart[0][0], dataSetChart[0][1], 0, 1));
+            if (functions.checkMinus(points)) {
+                series2.add(i, functions.f(i, dataSetChart[1][0], dataSetChart[1][1], 0, 2));
+                series3.add(i, functions.f(i, dataSetChart[2][0], dataSetChart[2][1], 0, 3));
+                series4.add(i, functions.f(i, dataSetChart[3][0], dataSetChart[3][1], 0, 4));
+            }
+            series5.add(i, functions.f(i, dataSetChart[4][0], dataSetChart[4][1], dataSetChart[4][2], 5));
         }
 
         dataset.addSeries(series);
         dataset.addSeries(series1);
-        dataset.addSeries(series2);
-        dataset.addSeries(series3);
-        dataset.addSeries(series4);
+        if (functions.checkMinus(points)) {
+            dataset.addSeries(series2);
+            dataset.addSeries(series3);
+            dataset.addSeries(series4);
+        }
         dataset.addSeries(series5);
 
         JFreeChart chart = ChartFactory.createXYLineChart("Fi(x)", "x",
@@ -51,7 +54,7 @@ public class DrawChart {
         // Помещаем график на фрейм
         frame.getContentPane()
                 .add(new ChartPanel(chart));
-        frame.setSize(1000, 1000);
+        frame.setSize(1000, 500);
         frame.setVisible(true);
     }
 }

@@ -25,9 +25,19 @@ public class InputFile {
                     }
                 }
                 case (1) -> {
+                    double e = 0.01;
                     for (int i = 0; i < n; i++) {
                         try {
-                            points[0][i] = scanner.nextDouble();
+                            double tmp = scanner.nextDouble();
+                            for (int j = 0; j < i; j++) {
+                                if (points[0][j] == tmp) {
+                                    tmp += e;
+                                    e += 0.01;
+                                    break;
+                                }
+
+                            }
+                            points[0][i] = tmp;
                         } catch (NumberFormatException exception) {
                             System.out.println("Ошибка при чтении координат X!");
                             break;
@@ -36,9 +46,19 @@ public class InputFile {
                     lineNumber++;
                 }
                 case (2) -> {
+                    double e = 0.01;
                     for (int i = 0; i < n; i++) {
                         try {
-                            points[1][i] = scanner.nextDouble();
+                            double tmp = scanner.nextDouble();
+                            for (int j = 0; j < i; j++) {
+                                if (points[1][j] == tmp) {
+                                    tmp += e;
+                                    e += 0.01;
+                                    break;
+                                }
+
+                            }
+                            points[1][i] = tmp;
                         } catch (NumberFormatException exception) {
                             System.out.println("Ошибка при чтении координат Y!");
                             break;
